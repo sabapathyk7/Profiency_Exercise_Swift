@@ -15,6 +15,10 @@
 		A2D053B82101AE71001C55A4 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2D053B62101AE71001C55A4 /* LaunchScreen.storyboard */; };
 		A2D053C32101AE71001C55A4 /* Profiency_Exercise_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053C22101AE71001C55A4 /* Profiency_Exercise_SwiftTests.swift */; };
 		A2D053CE2101AE71001C55A4 /* Profiency_Exercise_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053CD2101AE71001C55A4 /* Profiency_Exercise_SwiftUITests.swift */; };
+		A2D053DD2101AF59001C55A4 /* PEModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053DC2101AF59001C55A4 /* PEModel.swift */; };
+		A2D053E32101B023001C55A4 /* PEWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053E22101B023001C55A4 /* PEWebservice.swift */; };
+		A2D053E52101B05C001C55A4 /* PETableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053E42101B05C001C55A4 /* PETableViewCell.swift */; };
+		A2D053E82101B09B001C55A4 /* PEViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053E72101B09B001C55A4 /* PEViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +53,10 @@
 		A2D053C92101AE71001C55A4 /* Profiency_Exercise_SwiftUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Profiency_Exercise_SwiftUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D053CD2101AE71001C55A4 /* Profiency_Exercise_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profiency_Exercise_SwiftUITests.swift; sourceTree = "<group>"; };
 		A2D053CF2101AE71001C55A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A2D053DC2101AF59001C55A4 /* PEModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEModel.swift; sourceTree = "<group>"; };
+		A2D053E22101B023001C55A4 /* PEWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PEWebservice.swift; path = Profiency_Exercise_Swift/WebService/PEWebservice.swift; sourceTree = SOURCE_ROOT; };
+		A2D053E42101B05C001C55A4 /* PETableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETableViewCell.swift; sourceTree = "<group>"; };
+		A2D053E72101B09B001C55A4 /* PEViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +108,11 @@
 			isa = PBXGroup;
 			children = (
 				A2D053AA2101AE71001C55A4 /* AppDelegate.swift */,
-				A2D053AC2101AE71001C55A4 /* ViewController.swift */,
+				A2D053E92101B0A0001C55A4 /* ViewModel */,
+				A2D053E62101B060001C55A4 /* View */,
+				A2D053DE2101AF5E001C55A4 /* Model */,
+				A2D053E12101AFF2001C55A4 /* WebService */,
+				A2D053DB2101AF35001C55A4 /* Controller */,
 				A2D053AE2101AE71001C55A4 /* Main.storyboard */,
 				A2D053B42101AE71001C55A4 /* Assets.xcassets */,
 				A2D053B62101AE71001C55A4 /* LaunchScreen.storyboard */,
@@ -126,6 +138,47 @@
 				A2D053CF2101AE71001C55A4 /* Info.plist */,
 			);
 			path = Profiency_Exercise_SwiftUITests;
+			sourceTree = "<group>";
+		};
+		A2D053DB2101AF35001C55A4 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				A2D053AC2101AE71001C55A4 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		A2D053DE2101AF5E001C55A4 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A2D053DC2101AF59001C55A4 /* PEModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		A2D053E12101AFF2001C55A4 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				A2D053E22101B023001C55A4 /* PEWebservice.swift */,
+			);
+			name = WebService;
+			path = Controller/Model/WebService;
+			sourceTree = "<group>";
+		};
+		A2D053E62101B060001C55A4 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A2D053E42101B05C001C55A4 /* PETableViewCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		A2D053E92101B0A0001C55A4 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A2D053E72101B09B001C55A4 /* PEViewModel.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -264,6 +317,10 @@
 			files = (
 				A2D053AD2101AE71001C55A4 /* ViewController.swift in Sources */,
 				A2D053AB2101AE71001C55A4 /* AppDelegate.swift in Sources */,
+				A2D053E52101B05C001C55A4 /* PETableViewCell.swift in Sources */,
+				A2D053E32101B023001C55A4 /* PEWebservice.swift in Sources */,
+				A2D053DD2101AF59001C55A4 /* PEModel.swift in Sources */,
+				A2D053E82101B09B001C55A4 /* PEViewModel.swift in Sources */,
 				A2D053B32101AE71001C55A4 /* Profiency_Exercise_Swift.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
