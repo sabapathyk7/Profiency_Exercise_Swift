@@ -8,14 +8,17 @@
 
 import Foundation
 
+typealias JSONDictionary = [String:Any]
+
 // MARK: List of Constants
 let API_COUNTRY:String = "a_string_constant"
 
 
 class PEWebservice{
    
-    func parseJSON(){
-        
+    func parseJSON(completion:@escaping ([PEModel])->()){
+       
+        var profiencySource = [PEModel]()
         let url = URL(string: API_COUNTRY)
         URLSession.shared.dataTask(with: url!) { (data, response, error) in
             
@@ -27,14 +30,16 @@ class PEWebservice{
                 print("No data")
                 return
             }
-            guard let json = (try?JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers))as? [String:Any] else{
+            guard let json = (try?JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers))as? JSONDictionary else{
                 print("No JSON data from response")
                 return
             }
-            if let array = json["rows"] as? [String:Any]{
-                
+             let array = json["rows"] as! [JSONDictionary]
+            profiencySource = array.flatMap(PEModel.init)
+            DispatchQueue.main.async {
+                completion(profiencySource)
             }
-        }
+        }.resume()
         
     
     }

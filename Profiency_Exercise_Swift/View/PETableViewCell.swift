@@ -10,6 +10,9 @@ import UIKit
 
 class PETableViewCell: UITableViewCell {
 
+    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var descLabel: UILabel!
+    @IBOutlet weak var rowImage: UIImageView!
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
