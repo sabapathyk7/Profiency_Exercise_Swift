@@ -10,8 +10,11 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var countryTableView: UITableView!
     private var webservice: PEWebservice!
     private var listViewModel: PEListViewModel!
+    private var dataSource :PETableViewDataSource<PETableViewCell,PEViewModel>!
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -27,6 +30,24 @@ class ViewController: UIViewController {
         self.webservice = PEWebservice()
         self.listViewModel = PEListViewModel(webservice:self.webservice)
         
+        self.listViewModel.bindToSourceViewModels = {
+            self.updateTableViewDataSource()
+
+        }
+        
+        
+        
+        
+    }
+    
+    private func updateTableViewDataSource(){
+        
+        self.dataSource = PETableViewDataSource(cellIdentifier: Cells.source, items: self.listViewModel.countryViewModels, configureCell: { (cell, vm) in
+            cell.titleLabel.text = vm.rowTitle
+            cell.descLabel.text = vm.rowDesc
+        })
+        self.countryTableView.dataSource = self.dataSource
+        self.countryTableView.reloadData()
         
         
     }

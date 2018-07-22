@@ -7,14 +7,21 @@
 //
 
 import UIKit
+import Foundation
 
 class PEListViewModel: NSObject {
     @objc dynamic private(set) var countryViewModels :[PEViewModel] = [PEViewModel]()
     private var webservice: PEWebservice  //  Webservice
-    
+    private var token :NSKeyValueObservation?
+    var bindToSourceViewModels :(() -> ()) = {  }
+
     init(webservice:PEWebservice){
         self.webservice = webservice
         super.init()
+        
+        token = self.observe(\.countryViewModels){ _,_ in
+            self.bindToSourceViewModels()
+        }
         populateListData()
     }
     func populateListData(){
