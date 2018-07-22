@@ -39,12 +39,21 @@ class ViewController: UIViewController {
 
     }
     private func updateTableView(){
+        if Reachability.isConnectedToNetwork(){
+
         self.webservice = PEWebservice()
         self.listViewModel = PEListViewModel(webservice:self.webservice)
       
         
         self.listViewModel.bindToSourceViewModels = {
             self.updateTableViewDataSource()
+        }
+        }else{
+            let alert = UIAlertController(title: "Alert", message: "No Network connection", preferredStyle: UIAlertControllerStyle.alert)
+            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action:UIAlertAction!) in
+                print("you have pressed the ok button")
+            }))
+            self.present(alert, animated: true, completion: nil)
         }
         
         

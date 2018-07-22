@@ -21,6 +21,7 @@
 		A2D053ED21037FF2001C55A4 /* PEListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053EC21037FF2001C55A4 /* PEListViewModel.swift */; };
 		A2D053F221047DB8001C55A4 /* PETableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053F121047DB8001C55A4 /* PETableViewDataSource.swift */; };
 		A2D053F521048EB7001C55A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053F421048EB7001C55A4 /* Constants.swift */; };
+		A2D053F72104D43E001C55A4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053F62104D43E001C55A4 /* Reachability.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		A2D053EC21037FF2001C55A4 /* PEListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEListViewModel.swift; sourceTree = "<group>"; };
 		A2D053F121047DB8001C55A4 /* PETableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETableViewDataSource.swift; sourceTree = "<group>"; };
 		A2D053F421048EB7001C55A4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		A2D053F62104D43E001C55A4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 			isa = PBXGroup;
 			children = (
 				A2D053AA2101AE71001C55A4 /* AppDelegate.swift */,
+				A2D053F82104D442001C55A4 /* Reachablity */,
 				A2D053F321047DBE001C55A4 /* DataSource */,
 				A2D053E92101B0A0001C55A4 /* ViewModel */,
 				A2D053E62101B060001C55A4 /* View */,
@@ -194,6 +197,14 @@
 			);
 			name = DataSource;
 			path = "New Group";
+			sourceTree = "<group>";
+		};
+		A2D053F82104D442001C55A4 /* Reachablity */ = {
+			isa = PBXGroup;
+			children = (
+				A2D053F62104D43E001C55A4 /* Reachability.swift */,
+			);
+			path = Reachablity;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +349,7 @@
 				A2D053E32101B023001C55A4 /* PEWebservice.swift in Sources */,
 				A2D053DD2101AF59001C55A4 /* PEModel.swift in Sources */,
 				A2D053B32101AE71001C55A4 /* Profiency_Exercise_Swift.xcdatamodeld in Sources */,
+				A2D053F72104D43E001C55A4 /* Reachability.swift in Sources */,
 				A2D053F521048EB7001C55A4 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

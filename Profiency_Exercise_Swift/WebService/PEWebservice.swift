@@ -19,8 +19,6 @@ class PEWebservice{
     func parseJSON(completion:@escaping ([PEModel])->()){
        
         var profiencySource = [PEModel]()
-       
-      
         URLSession.shared.dataTask(with: countryURL) { (data, response, error) in
             
             guard error == nil else{
@@ -44,7 +42,5 @@ class PEWebservice{
                 completion(profiencySource)
             }
         }.resume()
-        
-    
-    }
+        }
 }
