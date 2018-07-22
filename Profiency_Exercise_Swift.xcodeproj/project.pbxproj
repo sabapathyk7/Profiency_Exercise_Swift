@@ -19,6 +19,7 @@
 		A2D053E32101B023001C55A4 /* PEWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053E22101B023001C55A4 /* PEWebservice.swift */; };
 		A2D053E52101B05C001C55A4 /* PETableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053E42101B05C001C55A4 /* PETableViewCell.swift */; };
 		A2D053ED21037FF2001C55A4 /* PEListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053EC21037FF2001C55A4 /* PEListViewModel.swift */; };
+		A2D053F221047DB8001C55A4 /* PETableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053F121047DB8001C55A4 /* PETableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +58,7 @@
 		A2D053E22101B023001C55A4 /* PEWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PEWebservice.swift; path = Profiency_Exercise_Swift/WebService/PEWebservice.swift; sourceTree = SOURCE_ROOT; };
 		A2D053E42101B05C001C55A4 /* PETableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETableViewCell.swift; sourceTree = "<group>"; };
 		A2D053EC21037FF2001C55A4 /* PEListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEListViewModel.swift; sourceTree = "<group>"; };
+		A2D053F121047DB8001C55A4 /* PETableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				A2D053AA2101AE71001C55A4 /* AppDelegate.swift */,
+				A2D053F321047DBE001C55A4 /* DataSource */,
 				A2D053E92101B0A0001C55A4 /* ViewModel */,
 				A2D053E62101B060001C55A4 /* View */,
 				A2D053DE2101AF5E001C55A4 /* Model */,
@@ -179,6 +182,15 @@
 				A2D053EC21037FF2001C55A4 /* PEListViewModel.swift */,
 			);
 			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		A2D053F321047DBE001C55A4 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A2D053F121047DB8001C55A4 /* PETableViewDataSource.swift */,
+			);
+			name = DataSource;
+			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -316,6 +328,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2D053ED21037FF2001C55A4 /* PEListViewModel.swift in Sources */,
+				A2D053F221047DB8001C55A4 /* PETableViewDataSource.swift in Sources */,
 				A2D053AD2101AE71001C55A4 /* ViewController.swift in Sources */,
 				A2D053AB2101AE71001C55A4 /* AppDelegate.swift in Sources */,
 				A2D053E52101B05C001C55A4 /* PETableViewCell.swift in Sources */,
