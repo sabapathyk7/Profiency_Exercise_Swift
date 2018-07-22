@@ -20,7 +20,6 @@ class PEModel: NSObject {
             let imageHref = dictionary["imageHref"] as?String else{
                 return nil
         }
-        
         self.rowTitle = title
         self.rowDesc = desc
         self.rowImgHref = imageHref

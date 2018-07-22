@@ -23,8 +23,6 @@ class PEWebservice{
       
         URLSession.shared.dataTask(with: countryURL) { (data, response, error) in
             
-      
-            
             guard error == nil else{
                 print("returned error")
                 return
@@ -33,18 +31,14 @@ class PEWebservice{
                 print("No data")
                 return
             }
-            
-            
             let returnString: String = String(decoding: content, as: UTF8.self)
             let returnData = returnString.data(using: String.Encoding.utf8)
             let jsonData:Data = returnData!
-            
-
             guard let json = (try?JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers))as? JSONDictionary else{
                 print("No JSON data from response")
                 return
             }
-             let array = json["rows"] as! [JSONDictionary]
+            let array = json["rows"] as! [JSONDictionary]
             profiencySource = array.flatMap(PEModel.init)
             DispatchQueue.main.async {
                 completion(profiencySource)
