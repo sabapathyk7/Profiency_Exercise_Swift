@@ -11,16 +11,19 @@ import Foundation
 typealias JSONDictionary = [String:Any]
 
 // MARK: List of Constants
-let API_COUNTRY:String = "a_string_constant"
 
 
 class PEWebservice{
-   
+    private let countryURL = URL(string: "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json")!
+
     func parseJSON(completion:@escaping ([PEModel])->()){
        
         var profiencySource = [PEModel]()
-        let url = URL(string: API_COUNTRY)
-        URLSession.shared.dataTask(with: url!) { (data, response, error) in
+       
+      
+        URLSession.shared.dataTask(with: countryURL) { (data, response, error) in
+            
+      
             
             guard error == nil else{
                 print("returned error")
@@ -30,7 +33,14 @@ class PEWebservice{
                 print("No data")
                 return
             }
-            guard let json = (try?JSONSerialization.jsonObject(with: content, options: JSONSerialization.ReadingOptions.mutableContainers))as? JSONDictionary else{
+            
+            
+            let returnString: String = String(decoding: content, as: UTF8.self)
+            let returnData = returnString.data(using: String.Encoding.utf8)
+            let jsonData:Data = returnData!
+            
+
+            guard let json = (try?JSONSerialization.jsonObject(with: jsonData, options: JSONSerialization.ReadingOptions.mutableContainers))as? JSONDictionary else{
                 print("No JSON data from response")
                 return
             }
