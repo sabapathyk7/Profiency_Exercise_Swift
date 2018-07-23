@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController,UIAlertViewDelegate {
 
     @IBOutlet weak var countryTableView: UITableView!
     private var webservice: PEWebservice!
@@ -49,14 +49,22 @@ class ViewController: UIViewController {
             self.updateTableViewDataSource()
         }
         }else{
-            let alert = UIAlertController(title: "Alert", message: "No Network connection", preferredStyle: UIAlertControllerStyle.alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: {(action:UIAlertAction!) in
-                print("you have pressed the ok button")
-            }))
-            self.present(alert, animated: true, completion: nil)
+            DispatchQueue.main.async {
+                self.addAlert()
+            }
+            
+            
+            
         }
         
         
+    }
+    func addAlert(){
+        let alert = UIAlertController(title: "Alert", message: "No Network connection", preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {action in
+            print("you have pressed the ok button")
+        }))
+        present(alert, animated: true, completion: nil)
     }
     private func updateTableViewDataSource(){
         

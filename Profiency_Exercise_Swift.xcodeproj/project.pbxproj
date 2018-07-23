@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A21DBEBA2105AD1A00DE53AE /* PETableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DBEB92105AD1A00DE53AE /* PETableViewDataSourceTests.swift */; };
 		A2D053AB2101AE71001C55A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053AA2101AE71001C55A4 /* AppDelegate.swift */; };
 		A2D053AD2101AE71001C55A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053AC2101AE71001C55A4 /* ViewController.swift */; };
 		A2D053B02101AE71001C55A4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A2D053AE2101AE71001C55A4 /* Main.storyboard */; };
@@ -16,12 +17,12 @@
 		A2D053C32101AE71001C55A4 /* Profiency_Exercise_SwiftTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053C22101AE71001C55A4 /* Profiency_Exercise_SwiftTests.swift */; };
 		A2D053CE2101AE71001C55A4 /* Profiency_Exercise_SwiftUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053CD2101AE71001C55A4 /* Profiency_Exercise_SwiftUITests.swift */; };
 		A2D053DD2101AF59001C55A4 /* PEModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053DC2101AF59001C55A4 /* PEModel.swift */; };
-		A2D053E32101B023001C55A4 /* PEWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053E22101B023001C55A4 /* PEWebservice.swift */; };
 		A2D053E52101B05C001C55A4 /* PETableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053E42101B05C001C55A4 /* PETableViewCell.swift */; };
 		A2D053ED21037FF2001C55A4 /* PEListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053EC21037FF2001C55A4 /* PEListViewModel.swift */; };
-		A2D053F221047DB8001C55A4 /* PETableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053F121047DB8001C55A4 /* PETableViewDataSource.swift */; };
 		A2D053F521048EB7001C55A4 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053F421048EB7001C55A4 /* Constants.swift */; };
 		A2D053F72104D43E001C55A4 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053F62104D43E001C55A4 /* Reachability.swift */; };
+		A2E74B9E2105745E0009A379 /* PEWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E74B9C2105745E0009A379 /* PEWebservice.swift */; };
+		A2E74B9F2105745E0009A379 /* PETableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2E74B9D2105745E0009A379 /* PETableViewDataSource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -42,6 +43,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A21DBEB92105AD1A00DE53AE /* PETableViewDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETableViewDataSourceTests.swift; sourceTree = "<group>"; };
 		A2D053A72101AE71001C55A4 /* Profiency_Exercise_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Profiency_Exercise_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D053AA2101AE71001C55A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A2D053AC2101AE71001C55A4 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -57,12 +59,12 @@
 		A2D053CD2101AE71001C55A4 /* Profiency_Exercise_SwiftUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profiency_Exercise_SwiftUITests.swift; sourceTree = "<group>"; };
 		A2D053CF2101AE71001C55A4 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A2D053DC2101AF59001C55A4 /* PEModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEModel.swift; sourceTree = "<group>"; };
-		A2D053E22101B023001C55A4 /* PEWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PEWebservice.swift; path = Profiency_Exercise_Swift/WebService/PEWebservice.swift; sourceTree = SOURCE_ROOT; };
 		A2D053E42101B05C001C55A4 /* PETableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETableViewCell.swift; sourceTree = "<group>"; };
 		A2D053EC21037FF2001C55A4 /* PEListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PEListViewModel.swift; sourceTree = "<group>"; };
-		A2D053F121047DB8001C55A4 /* PETableViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETableViewDataSource.swift; sourceTree = "<group>"; };
 		A2D053F421048EB7001C55A4 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		A2D053F62104D43E001C55A4 /* Reachability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		A2E74B9C2105745E0009A379 /* PEWebservice.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PEWebservice.swift; sourceTree = "<group>"; };
+		A2E74B9D2105745E0009A379 /* PETableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PETableViewDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -114,12 +116,12 @@
 			isa = PBXGroup;
 			children = (
 				A2D053AA2101AE71001C55A4 /* AppDelegate.swift */,
+				A2E74BA12105747C0009A379 /* DataSource */,
+				A2E74BA0210574650009A379 /* WebService */,
 				A2D053F82104D442001C55A4 /* Reachablity */,
-				A2D053F321047DBE001C55A4 /* DataSource */,
 				A2D053E92101B0A0001C55A4 /* ViewModel */,
 				A2D053E62101B060001C55A4 /* View */,
 				A2D053DE2101AF5E001C55A4 /* Model */,
-				A2D053E12101AFF2001C55A4 /* WebService */,
 				A2D053DB2101AF35001C55A4 /* Controller */,
 				A2D053B42101AE71001C55A4 /* Assets.xcassets */,
 				A2D053AE2101AE71001C55A4 /* Main.storyboard */,
@@ -134,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				A2D053C22101AE71001C55A4 /* Profiency_Exercise_SwiftTests.swift */,
+				A21DBEB92105AD1A00DE53AE /* PETableViewDataSourceTests.swift */,
 				A2D053C42101AE71001C55A4 /* Info.plist */,
 			);
 			path = Profiency_Exercise_SwiftTests;
@@ -164,15 +167,6 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
-		A2D053E12101AFF2001C55A4 /* WebService */ = {
-			isa = PBXGroup;
-			children = (
-				A2D053E22101B023001C55A4 /* PEWebservice.swift */,
-			);
-			name = WebService;
-			path = Controller/Model/WebService;
-			sourceTree = "<group>";
-		};
 		A2D053E62101B060001C55A4 /* View */ = {
 			isa = PBXGroup;
 			children = (
@@ -190,21 +184,28 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
-		A2D053F321047DBE001C55A4 /* DataSource */ = {
-			isa = PBXGroup;
-			children = (
-				A2D053F121047DB8001C55A4 /* PETableViewDataSource.swift */,
-			);
-			name = DataSource;
-			path = "New Group";
-			sourceTree = "<group>";
-		};
 		A2D053F82104D442001C55A4 /* Reachablity */ = {
 			isa = PBXGroup;
 			children = (
 				A2D053F62104D43E001C55A4 /* Reachability.swift */,
 			);
 			path = Reachablity;
+			sourceTree = "<group>";
+		};
+		A2E74BA0210574650009A379 /* WebService */ = {
+			isa = PBXGroup;
+			children = (
+				A2E74B9C2105745E0009A379 /* PEWebservice.swift */,
+			);
+			path = WebService;
+			sourceTree = "<group>";
+		};
+		A2E74BA12105747C0009A379 /* DataSource */ = {
+			isa = PBXGroup;
+			children = (
+				A2E74B9D2105745E0009A379 /* PETableViewDataSource.swift */,
+			);
+			path = DataSource;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -342,11 +343,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				A2D053ED21037FF2001C55A4 /* PEListViewModel.swift in Sources */,
-				A2D053F221047DB8001C55A4 /* PETableViewDataSource.swift in Sources */,
 				A2D053AD2101AE71001C55A4 /* ViewController.swift in Sources */,
 				A2D053AB2101AE71001C55A4 /* AppDelegate.swift in Sources */,
+				A2E74B9F2105745E0009A379 /* PETableViewDataSource.swift in Sources */,
 				A2D053E52101B05C001C55A4 /* PETableViewCell.swift in Sources */,
-				A2D053E32101B023001C55A4 /* PEWebservice.swift in Sources */,
+				A2E74B9E2105745E0009A379 /* PEWebservice.swift in Sources */,
 				A2D053DD2101AF59001C55A4 /* PEModel.swift in Sources */,
 				A2D053B32101AE71001C55A4 /* Profiency_Exercise_Swift.xcdatamodeld in Sources */,
 				A2D053F72104D43E001C55A4 /* Reachability.swift in Sources */,
@@ -358,6 +359,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A21DBEBA2105AD1A00DE53AE /* PETableViewDataSourceTests.swift in Sources */,
 				A2D053C32101AE71001C55A4 /* Profiency_Exercise_SwiftTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

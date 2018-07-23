@@ -2,4 +2,183 @@
 <Bucket
    type = "1"
    version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.SwiftErrorBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.ExceptionBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            scope = "0"
+            stopOnStyle = "0">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Profiency_Exercise_SwiftTests/PETableViewDataSourceTests.swift"
+            timestampString = "554023739.666931"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
+            landmarkName = "testEmptyValueInDataSource()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Profiency_Exercise_SwiftTests.PETableViewDataSourceTests.testEmptyValueInDataSource() -&gt; ()"
+                  moduleName = "Profiency_Exercise_SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kannan/Documents/Saba/Profiency_Exercise_Swift/Profiency_Exercise_SwiftTests/PETableViewDataSourceTests.swift"
+                  timestampString = "554023740.7153831"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "509">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #1 : @autoclosure () throws -&gt; Swift.Int in Profiency_Exercise_SwiftTests.PETableViewDataSourceTests.testEmptyValueInDataSource() -&gt; ()"
+                  moduleName = "Profiency_Exercise_SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kannan/Documents/Saba/Profiency_Exercise_Swift/Profiency_Exercise_SwiftTests/PETableViewDataSourceTests.swift"
+                  timestampString = "554023740.718277"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "25">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "implicit closure #3 : @autoclosure () -&gt; Swift.String in Profiency_Exercise_SwiftTests.PETableViewDataSourceTests.testEmptyValueInDataSource() -&gt; ()"
+                  moduleName = "Profiency_Exercise_SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kannan/Documents/Saba/Profiency_Exercise_Swift/Profiency_Exercise_SwiftTests/PETableViewDataSourceTests.swift"
+                  timestampString = "554023740.722255"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "47"
+                  endingLineNumber = "47"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Profiency_Exercise_SwiftTests/PETableViewDataSourceTests.swift"
+            timestampString = "554023739.667415"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "setUp()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Profiency_Exercise_SwiftTests.PETableViewDataSourceTests.setUp() -&gt; ()"
+                  moduleName = "Profiency_Exercise_SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kannan/Documents/Saba/Profiency_Exercise_Swift/Profiency_Exercise_SwiftTests/PETableViewDataSourceTests.swift"
+                  timestampString = "554023740.725722"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "408">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.UITableViewCell, Any) -&gt; () in Profiency_Exercise_SwiftTests.PETableViewDataSourceTests.setUp() -&gt; ()"
+                  moduleName = "Profiency_Exercise_SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kannan/Documents/Saba/Profiency_Exercise_Swift/Profiency_Exercise_SwiftTests/PETableViewDataSourceTests.swift"
+                  timestampString = "554023740.727586"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Profiency_Exercise_SwiftTests/PETableViewDataSourceTests.swift"
+            timestampString = "554023743.586095"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "22"
+            endingLineNumber = "22"
+            landmarkName = "setUp()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Profiency_Exercise_SwiftTests.PETableViewDataSourceTests.setUp() -&gt; ()"
+                  moduleName = "Profiency_Exercise_SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kannan/Documents/Saba/Profiency_Exercise_Swift/Profiency_Exercise_SwiftTests/PETableViewDataSourceTests.swift"
+                  timestampString = "554023743.5931441"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "157">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 (__ObjC.UITableViewCell, Any) -&gt; () in Profiency_Exercise_SwiftTests.PETableViewDataSourceTests.setUp() -&gt; ()"
+                  moduleName = "Profiency_Exercise_SwiftTests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/kannan/Documents/Saba/Profiency_Exercise_Swift/Profiency_Exercise_SwiftTests/PETableViewDataSourceTests.swift"
+                  timestampString = "554023743.597165"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "24"
+                  endingLineNumber = "24"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
 </Bucket>

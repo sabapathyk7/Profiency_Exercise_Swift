@@ -11,7 +11,7 @@ import UIKit
 class PETableViewDataSource<Cell : UITableViewCell,ViewModel>: NSObject,UITableViewDataSource {
     
     private var cellIdentifier:String!
-    private var items:[ViewModel]!
+    var items:[ViewModel]!
     var configureCell: (Cell,ViewModel)->()
     
     init(cellIdentifier: String, items: [ViewModel],configureCell:@escaping (Cell,ViewModel)->()){
