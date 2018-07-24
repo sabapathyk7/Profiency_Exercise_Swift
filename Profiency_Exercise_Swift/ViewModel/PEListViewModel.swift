@@ -9,8 +9,10 @@
 import UIKit
 import Foundation
 
-class PEListViewModel: NSObject {
+class PEListViewModevarNSObject {
     @objc dynamic private(set) var countryViewModels :[PEViewModel] = [PEViewModel]()
+    @objc dynamic private(set) var countryTitleModels :[PETitleModel] = [PETitleModel]()
+
     private var webservice: PEWebservice  //  Webservice
     private var token :NSKeyValueObservation?
     var bindToSourceViewModels :(() -> ()) = {  }
@@ -23,11 +25,19 @@ class PEListViewModel: NSObject {
             self.bindToSourceViewModels()
         }
         populateListData()
+        NotificationCenter.default.addObserver(self, selector: #selector(self.getTitle(notification:)), name: Notification.Name("titleJSON"), object: nil)
+        
+    }
+    @objc func getTitle(notification:NSNotification){
+        Title.title = notification.value(forKey: "name") as! NSString
+
     }
     func populateListData(){
+        
         self.webservice .parseJSON { [unowned self] listData in
-            self.countryViewModels = listData.flatMap(PEViewModel.init)
+            self.countryViewModels = listData.compactMap(PEViewModel.init)
         }
+        
     }
 }
 
@@ -47,6 +57,21 @@ class PEViewModel: NSObject {
         self.rowDesc = pemodel.rowDesc
         self.rowImgHref = pemodel.rowImgHref
 
+    }
+    
+}
+
+class PETitleViewModel: NSObject {
+   
+    var title:String!
+    
+    init(title: String){
+        self.title = title
+    }
+    
+    init(pemodel:PETitleModel){
+        self.title = pemodel.countryTitle
+        
     }
     
 }

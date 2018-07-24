@@ -14,7 +14,7 @@ typealias JSONDictionary = [String:Any]
 
 
 class PEWebservice{
-    private let countryURL = URL(string: "https://dl.dropboxusercontent.com/s/2iodh4vg0eortkl/facts.json")!
+    private let countryURL = URL(string: API.link)!
 
     func parseJSON(completion:@escaping ([PEModel])->()){
        
@@ -36,11 +36,25 @@ class PEWebservice{
                 print("No JSON data from response")
                 return
             }
+            
+            let titleFromAPI = json["title"] as? String
+            NotificationCenter.default.post(name: Notification.Name("titleJSON"), object: nil)
+
             let array = json["rows"] as! [JSONDictionary]
-            profiencySource = array.flatMap(PEModel.init)
+//            var array1 = self.convertToDictionary(text: titleFromAPI!)
+//            array.append(contentsOf: array1)
+            profiencySource = array.compactMap(PEModel.init)
             DispatchQueue.main.async {
                 completion(profiencySource)
             }
         }.resume()
         }
+    
+    func getTitleFromJSON(title:String) -> String{
+        
+        
+        return title
+
+    }
+   
 }

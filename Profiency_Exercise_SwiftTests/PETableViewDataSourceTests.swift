@@ -14,7 +14,7 @@ class PETableViewDataSourceTests: XCTestCase {
 
     override func setUp() {
         super.setUp()
-        var webservice = PEWebservice()
+        let webservice = PEWebservice()
 
         listViewModel = PEListViewModel(webservice:webservice)
 
@@ -34,27 +34,43 @@ class PETableViewDataSourceTests: XCTestCase {
     func testEmptyValueInDataSource() {
         
         // giving empty data value
-        datasource = PETableViewDataSource(cellIdentifier: Cells.source, items: listViewModel.countryViewModels, configureCell: { (cell, vm) in
-            
-        })
-        
         let tableView = UITableView()
         tableView.dataSource = datasource
-        
-        // expected one section
-        
-        // expected zero cells
         XCTAssertEqual(datasource.tableView(tableView, numberOfRowsInSection: 0), 0, "Expected no cell in table view")
     }
     
     func testValueInDataSource() {
         
         // giving data value
-        datasource = PETableViewDataSource(cellIdentifier: Cells.source, items: listViewModel.countryViewModels, configureCell: { (cell, vm) in
-            
-        })
+        
+        let temp1 = [Pevalues.name,Pevalues.desc]
+        let temp2 = [Pevalues.name,Pevalues.desc]
+        datasource.items = [temp1,temp2]
+        let tableView = UITableView()
+        tableView.dataSource = datasource
+        XCTAssertEqual(datasource.numberOfSections(in: tableView), 1, "Expected one section in table view")
+        
+        // expected two cells
+        XCTAssertEqual(datasource.tableView(tableView, numberOfRowsInSection: 0), 2, "Expected two cell in table view")
     }
-    
+    func testValueCell() {
+        
+        // giving data value
+        let temp = [Pevalues.name,Pevalues.desc]
+        datasource.items = temp
+        
+        let tableView = UITableView()
+        tableView.dataSource = datasource
+        tableView.register(PETableViewCell.self, forCellReuseIdentifier: Cells.source)
+        
+        let indexPath = IndexPath(row: 0, section: 0)
+        
+        // expected CurrencyCell class
+        guard let _ = datasource.tableView(tableView, cellForRowAt: indexPath) as? PETableViewCell else {
+            XCTAssert(false, "Expected CurrencyCell class")
+            return
+        }
+    }
     func testExample() {
         // This is an example of a functional test case.
         // Use XCTAssert and related functions to verify your tests produce the correct results.

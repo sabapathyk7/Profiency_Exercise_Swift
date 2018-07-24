@@ -25,10 +25,16 @@ class PEModel: NSObject {
         self.rowImgHref = imageHref
         
     }
+  
+    
     init(viewModel: PEViewModel){
     
-//        self.rowTitle = viewModel.
+        self.rowTitle = viewModel.rowTitle
+        self.rowDesc = viewModel.rowDesc
+        self.rowImgHref = viewModel.rowImgHref
     }
+    
+    
     
     
 }

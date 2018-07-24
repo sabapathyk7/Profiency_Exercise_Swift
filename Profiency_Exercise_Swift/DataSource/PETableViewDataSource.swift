@@ -15,20 +15,26 @@ class PETableViewDataSource<Cell : UITableViewCell,ViewModel>: NSObject,UITableV
     var configureCell: (Cell,ViewModel)->()
     
     init(cellIdentifier: String, items: [ViewModel],configureCell:@escaping (Cell,ViewModel)->()){
+        // Initializing the View Model, Cell identifier  to view model
         self.cellIdentifier = cellIdentifier
         self.items = items
         self.configureCell = configureCell
         
     }
     
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1  // Returning the number of sections in the tableview
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.items.count
+        return self.items.count  // Returning the number of rows in the section of the tableview
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! Cell
-        let item = self.items[indexPath.row]
-        self.configureCell(cell,item)
+        let item = self.items[indexPath.row]// Assigning the values from the model class items to the cell based on the indexpath.
+        self.configureCell(cell,item)// Configuring the cell using the cell identifier and items to be displayed
         return cell
         
     }

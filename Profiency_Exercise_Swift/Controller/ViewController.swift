@@ -21,7 +21,6 @@ class ViewController: UIViewController,UIAlertViewDelegate {
         // Do any additional setup after loading the view, typically from a nib.
         updateTableView()
         self.countryTableView.addSubview(self.refreshControl)
-
     }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -52,12 +51,7 @@ class ViewController: UIViewController,UIAlertViewDelegate {
             DispatchQueue.main.async {
                 self.addAlert()
             }
-            
-            
-            
         }
-        
-        
     }
     func addAlert(){
         let alert = UIAlertController(title: "Alert", message: "No Network connection", preferredStyle: UIAlertControllerStyle.alert)
@@ -67,7 +61,6 @@ class ViewController: UIViewController,UIAlertViewDelegate {
         present(alert, animated: true, completion: nil)
     }
     private func updateTableViewDataSource(){
-        
         self.dataSource = PETableViewDataSource(cellIdentifier: Cells.source, items: self.listViewModel.countryViewModels, configureCell: { (cell, vm) in
             cell.titleLabel.text = vm.rowTitle
             cell.descLabel.text = vm.rowDesc
@@ -87,10 +80,6 @@ class ViewController: UIViewController,UIAlertViewDelegate {
         })
         self.countryTableView.dataSource = self.dataSource
         self.countryTableView.reloadData()
-
-
-        
-        
     }
     func getDataFromUrl(url: URL, completion: @escaping (Data?, URLResponse?, Error?) -> ()) {
         URLSession.shared.dataTask(with: url) { data, response, error in
