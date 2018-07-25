@@ -17,10 +17,9 @@ class PEWebservice{
     private let countryURL = URL(string: API.link)!
 
     func parseJSON(completion:@escaping ([PEModel])->()){
-       
+        
         var profiencySource = [PEModel]()
         URLSession.shared.dataTask(with: countryURL) { (data, response, error) in
-            
             guard error == nil else{
                 print("returned error")
                 return
@@ -36,25 +35,16 @@ class PEWebservice{
                 print("No JSON data from response")
                 return
             }
-            
             let titleFromAPI = json["title"] as? String
-            NotificationCenter.default.post(name: Notification.Name("titleJSON"), object: nil)
-
+            NotificationCenter.default.post(name: Notification.Name("titleJSON"), object: nil, userInfo: ["title":titleFromAPI as Any])
             let array = json["rows"] as! [JSONDictionary]
-//            var array1 = self.convertToDictionary(text: titleFromAPI!)
-//            array.append(contentsOf: array1)
-            profiencySource = array.compactMap(PEModel.init)
+            profiencySource = array.flatMap(PEModel.init)
             DispatchQueue.main.async {
                 completion(profiencySource)
             }
-        }.resume()
-        }
-    
-    func getTitleFromJSON(title:String) -> String{
-        
-        
-        return title
-
+            }.resume()
     }
+    
+  
    
 }

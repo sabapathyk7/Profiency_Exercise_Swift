@@ -13,7 +13,7 @@ class PETableViewDataSource<Cell : UITableViewCell,ViewModel>: NSObject,UITableV
     private var cellIdentifier:String!
     var items:[ViewModel]!
     var configureCell: (Cell,ViewModel)->()
-    
+
     init(cellIdentifier: String, items: [ViewModel],configureCell:@escaping (Cell,ViewModel)->()){
         // Initializing the View Model, Cell identifier  to view model
         self.cellIdentifier = cellIdentifier

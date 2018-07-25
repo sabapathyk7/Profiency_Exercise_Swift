@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 
 struct Title {
-    static var title:NSString!
+    static var title:String!
 }
 struct Cells {
     static let source = "PETableViewCell"

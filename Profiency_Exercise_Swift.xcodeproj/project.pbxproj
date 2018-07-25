@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		9BAC080E210759BD001ADDC2 /* PETitleModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BAC080D210759BD001ADDC2 /* PETitleModel.swift */; };
 		A21DBEBA2105AD1A00DE53AE /* PETableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DBEB92105AD1A00DE53AE /* PETableViewDataSourceTests.swift */; };
 		A2D053AB2101AE71001C55A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053AA2101AE71001C55A4 /* AppDelegate.swift */; };
 		A2D053AD2101AE71001C55A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053AC2101AE71001C55A4 /* ViewController.swift */; };
@@ -44,7 +43,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		9BAC080D210759BD001ADDC2 /* PETitleModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETitleModel.swift; sourceTree = "<group>"; };
 		A21DBEB92105AD1A00DE53AE /* PETableViewDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETableViewDataSourceTests.swift; sourceTree = "<group>"; };
 		A2D053A72101AE71001C55A4 /* Profiency_Exercise_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Profiency_Exercise_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D053AA2101AE71001C55A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -118,6 +116,7 @@
 			isa = PBXGroup;
 			children = (
 				A2D053AA2101AE71001C55A4 /* AppDelegate.swift */,
+				A2F7404421083AF50062D05E /* Constants */,
 				A2E74BA12105747C0009A379 /* DataSource */,
 				A2E74BA0210574650009A379 /* WebService */,
 				A2D053F82104D442001C55A4 /* Reachablity */,
@@ -165,7 +164,6 @@
 			isa = PBXGroup;
 			children = (
 				A2D053DC2101AF59001C55A4 /* PEModel.swift */,
-				9BAC080D210759BD001ADDC2 /* PETitleModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -174,7 +172,6 @@
 			isa = PBXGroup;
 			children = (
 				A2D053E42101B05C001C55A4 /* PETableViewCell.swift */,
-				A2D053F421048EB7001C55A4 /* Constants.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -209,6 +206,14 @@
 				A2E74B9D2105745E0009A379 /* PETableViewDataSource.swift */,
 			);
 			path = DataSource;
+			sourceTree = "<group>";
+		};
+		A2F7404421083AF50062D05E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				A2D053F421048EB7001C55A4 /* Constants.swift */,
+			);
+			path = Constants;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -348,7 +353,6 @@
 				A2D053ED21037FF2001C55A4 /* PEListViewModel.swift in Sources */,
 				A2D053AD2101AE71001C55A4 /* ViewController.swift in Sources */,
 				A2D053AB2101AE71001C55A4 /* AppDelegate.swift in Sources */,
-				9BAC080E210759BD001ADDC2 /* PETitleModel.swift in Sources */,
 				A2E74B9F2105745E0009A379 /* PETableViewDataSource.swift in Sources */,
 				A2D053E52101B05C001C55A4 /* PETableViewCell.swift in Sources */,
 				A2E74B9E2105745E0009A379 /* PEWebservice.swift in Sources */,

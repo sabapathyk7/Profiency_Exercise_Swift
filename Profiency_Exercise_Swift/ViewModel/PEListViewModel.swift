@@ -9,13 +9,12 @@
 import UIKit
 import Foundation
 
-class PEListViewModevarNSObject {
+class PEListViewModel:NSObject {
     @objc dynamic private(set) var countryViewModels :[PEViewModel] = [PEViewModel]()
-    @objc dynamic private(set) var countryTitleModels :[PETitleModel] = [PETitleModel]()
 
     private var webservice: PEWebservice  //  Webservice
     private var token :NSKeyValueObservation?
-    var bindToSourceViewModels :(() -> ()) = {  }
+    var bindToSourceViewModels :(() -> ()) = {  }    // KVO - Keyvalue observing
 
     init(webservice:PEWebservice){
         self.webservice = webservice
@@ -24,24 +23,25 @@ class PEListViewModevarNSObject {
         token = self.observe(\.countryViewModels){ _,_ in
             self.bindToSourceViewModels()
         }
-        populateListData()
-        NotificationCenter.default.addObserver(self, selector: #selector(self.getTitle(notification:)), name: Notification.Name("titleJSON"), object: nil)
+        populateListData() // Method to get the data from the API
+        NotificationCenter.default.addObserver(self, selector: #selector(self.getTitle(notification:)), name: Notification.Name("titleJSON"), object: nil)   // NSNotificationCenter - to get the title value from the API.
         
     }
     @objc func getTitle(notification:NSNotification){
-        Title.title = notification.value(forKey: "name") as! NSString
-
+        Title.title = notification.userInfo!["title"] as! String
     }
     func populateListData(){
         
         self.webservice .parseJSON { [unowned self] listData in
-            self.countryViewModels = listData.compactMap(PEViewModel.init)
+            self.countryViewModels = listData.flatMap(PEViewModel.init)   // Fetching the data from the service API calls and mapping to the PEViewModel class
         }
         
     }
 }
 
 class PEViewModel: NSObject {
+    
+    //  Model class for the each row of the tableview
     var rowTitle:String!
     var rowDesc :String!
     var rowImgHref:String!
@@ -61,17 +61,3 @@ class PEViewModel: NSObject {
     
 }
 
-class PETitleViewModel: NSObject {
-   
-    var title:String!
-    
-    init(title: String){
-        self.title = title
-    }
-    
-    init(pemodel:PETitleModel){
-        self.title = pemodel.countryTitle
-        
-    }
-    
-}
