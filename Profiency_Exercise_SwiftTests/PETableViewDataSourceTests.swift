@@ -9,14 +9,14 @@
 import XCTest
 @testable import Profiency_Exercise_Swift
 class PETableViewDataSourceTests: XCTestCase {
-    var datasource:PETableViewDataSource<UITableViewCell, Any>!
+    var datasource: PETableViewDataSource<UITableViewCell, Any>!
     private var listViewModel: PEListViewModel!
 
     override func setUp() {
         super.setUp()
         let webservice = PEWebservice()
 
-        listViewModel = PEListViewModel(webservice:webservice)
+        listViewModel = PEListViewModel(webservice: webservice)
 
         // Put setup code here. This method is called before the invocation of each test method in the class.
         datasource = PETableViewDataSource(cellIdentifier: Cells.source, items: listViewModel.countryViewModels, configureCell: { (cell, vm) in
@@ -43,9 +43,9 @@ class PETableViewDataSourceTests: XCTestCase {
         
         // giving data value
         
-        let temp1 = [Pevalues.name,Pevalues.desc]
-        let temp2 = [Pevalues.name,Pevalues.desc]
-        datasource.items = [temp1,temp2]
+        let temp1 = [Pevalues.name, Pevalues.desc]
+        let temp2 = [Pevalues.name, Pevalues.desc]
+        datasource.items = [temp1, temp2]
         let tableView = UITableView()
         tableView.dataSource = datasource
         XCTAssertEqual(datasource.numberOfSections(in: tableView), 1, "Expected one section in table view")
@@ -56,9 +56,8 @@ class PETableViewDataSourceTests: XCTestCase {
     func testValueCell() {
         
         // giving data value
-        let temp = [Pevalues.name,Pevalues.desc]
+        let temp = [Pevalues.name, Pevalues.desc]
         datasource.items = temp
-        
         let tableView = UITableView()
         tableView.dataSource = datasource
         tableView.register(PETableViewCell.self, forCellReuseIdentifier: Cells.source)

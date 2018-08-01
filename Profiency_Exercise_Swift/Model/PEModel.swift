@@ -10,22 +10,20 @@ import UIKit
 
 class PEModel: NSObject {
 
-    var rowTitle :String!
-    var rowDesc :String!
-    var rowImgHref :String!
+    var rowTitle: String!
+    var rowDesc: String!
+    var rowImgHref: String!
     
-    init?(dictionary:JSONDictionary) {
-        guard let title = dictionary["title"] as?String,
-        let desc = dictionary["description"] as?String,
-            let imageHref = dictionary["imageHref"] as?String else{
+    init?(dictionary: JSONDictionary) {
+        guard let title = dictionary[CellAttributes.title] as? String,
+        let desc = dictionary[CellAttributes.desc] as? String,
+            let imageHref = dictionary[CellAttributes.imageHref] as? String else{
                 return nil
         }
         self.rowTitle = title
         self.rowDesc = desc
         self.rowImgHref = imageHref
-        
     }
-  
     
     init(viewModel: PEViewModel){
     
@@ -33,8 +31,4 @@ class PEModel: NSObject {
         self.rowDesc = viewModel.rowDesc
         self.rowImgHref = viewModel.rowImgHref
     }
-    
-    
-    
-    
 }

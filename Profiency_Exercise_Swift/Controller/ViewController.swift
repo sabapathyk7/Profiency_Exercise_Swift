@@ -8,15 +8,15 @@
 
 import UIKit
 
-class ViewController: UIViewController,UIAlertViewDelegate {
+class ViewController: UIViewController, UIAlertViewDelegate {
     
     @IBOutlet var peView: UIView!
-    @IBOutlet weak var navigationTitle:UINavigationItem!
-    @IBOutlet weak var countryTableView:UITableView!
-    private var webservice:PEWebservice!
-    @IBOutlet weak var titleBar:UINavigationBar!
-    private var listViewModel:PEListViewModel!
-    private var dataSource:PETableViewDataSource<PETableViewCell,PEViewModel>!
+    @IBOutlet weak var navigationTitle: UINavigationItem!
+    @IBOutlet weak var countryTableView: UITableView!
+    private var webservice: PEWebservice!
+    @IBOutlet weak var titleBar: UINavigationBar!
+    private var listViewModel: PEListViewModel!
+    private var dataSource: PETableViewDataSource<PETableViewCell, PEViewModel>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,16 +26,15 @@ class ViewController: UIViewController,UIAlertViewDelegate {
         ActivityIndicatorView().showActivityIndicatorView(view: self.view)
     }
     
-    lazy var refreshControl:UIRefreshControl={
+    lazy var refreshControl: UIRefreshControl={
         
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(handleRefresh(_:)), for: UIControlEvents.valueChanged) // Handling refresh control using Lazy Variable method so that it can be initilized only when we call the function
-        refreshControl.tintColor = UIColor.blue
+        refreshControl.tintColor = .blue
         return refreshControl
     }()
     
     @objc private func handleRefresh(_ sender: Any) {  // Objective C bridge to call the selector method for handling refresh control
-        
         updateTableView()
         refreshControl.endRefreshing()
     }
@@ -46,7 +45,7 @@ class ViewController: UIViewController,UIAlertViewDelegate {
 
         if Reachability.isConnectedToNetwork(){  // If network connection is good
             self.webservice = PEWebservice()
-            self.listViewModel = PEListViewModel(webservice:self.webservice)
+            self.listViewModel = PEListViewModel(webservice: self.webservice)
             
             
             self.listViewModel.bindToSourceViewModels = {
@@ -65,9 +64,9 @@ class ViewController: UIViewController,UIAlertViewDelegate {
     
     func addAlert(){
         // Adding alert to the VC
-        let alert = UIAlertController(title: "Alert", message: "No Network connection", preferredStyle: UIAlertControllerStyle.alert)
-        alert.addAction(UIAlertAction(title: "OK", style: UIAlertActionStyle.default, handler: {action in
-            print("you have pressed the ok button")
+        let alert = UIAlertController(title: Alert.alertTitle, message: Alert.message, preferredStyle: UIAlertControllerStyle.alert)
+        alert.addAction(UIAlertAction(title: Alert.actionTitle, style: UIAlertActionStyle.default, handler: {action in
+            print( Alert.alertText)
         }))
         present(alert, animated: true, completion: nil)
     }
@@ -76,7 +75,6 @@ class ViewController: UIViewController,UIAlertViewDelegate {
     private func updateTableViewDataSource(){
         
         self.navigationTitle.title = Title.title // Assigning the title value to the navigation bar item
-        
         self.dataSource = PETableViewDataSource(cellIdentifier: Cells.source, items: self.listViewModel.countryViewModels, configureCell: { (cell, vm) in   // Configuring the viewmodel and cell from the PETableviewDatasource- UITableViewDataSource
             cell.titleLabel.text = vm.rowTitle // title of the record
             cell.descLabel.text = vm.rowDesc   // description of the record
@@ -86,7 +84,7 @@ class ViewController: UIViewController,UIAlertViewDelegate {
                 self.getDataFromUrl(url: url) { data, response, error in
                     guard let data = data, error == nil else { return }   // Using the URLSession we could able to get the image downloaded
                     print(response?.suggestedFilename ?? url.lastPathComponent)
-                    print("Download Finished")
+                    print(Response.imageDownload)
                     DispatchQueue.main.async() {
                         cell.rowImage?.image = UIImage(data: data) // Assinging the image
                     }
@@ -104,9 +102,6 @@ class ViewController: UIViewController,UIAlertViewDelegate {
             }.resume()
     }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+   
 }
 

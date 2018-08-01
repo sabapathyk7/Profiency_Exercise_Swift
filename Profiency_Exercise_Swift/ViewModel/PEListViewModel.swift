@@ -9,14 +9,14 @@
 import UIKit
 import Foundation
 
-class PEListViewModel:NSObject {
-    @objc dynamic private(set) var countryViewModels :[PEViewModel] = [PEViewModel]()
+class PEListViewModel: NSObject {
+    @objc dynamic private(set) var countryViewModels: [PEViewModel] = [PEViewModel]()
 
     private var webservice: PEWebservice  //  Webservice
-    private var token :NSKeyValueObservation?
+    private var token: NSKeyValueObservation?
     var bindToSourceViewModels :(() -> ()) = {  }    // KVO - Keyvalue observing
 
-    init(webservice:PEWebservice){
+    init(webservice: PEWebservice){
         self.webservice = webservice
         super.init()
         
@@ -24,11 +24,11 @@ class PEListViewModel:NSObject {
             self.bindToSourceViewModels()
         }
         populateListData() // Method to get the data from the API
-        NotificationCenter.default.addObserver(self, selector: #selector(self.getTitle(notification:)), name: Notification.Name("titleJSON"), object: nil)   // NSNotificationCenter - to get the title value from the API.
+        NotificationCenter.default.addObserver(self, selector: #selector(self.getTitle(notification:)), name: Notification.Name(Notify.name), object: nil)   // NSNotificationCenter - to get the title value from the API.
         
     }
-    @objc func getTitle(notification:NSNotification){
-        Title.title = notification.userInfo!["title"] as! String
+    @objc func getTitle(notification: NSNotification){
+        Title.title = notification.userInfo![APIResponse.title] as! String
     }
     func populateListData(){
         
@@ -42,17 +42,17 @@ class PEListViewModel:NSObject {
 class PEViewModel: NSObject {
     
     //  Model class for the each row of the tableview
-    var rowTitle:String!
-    var rowDesc :String!
-    var rowImgHref:String!
+    var rowTitle: String!
+    var rowDesc : String!
+    var rowImgHref: String!
     
-    init(title: String, desc: String, image:String){
+    init(title: String, desc: String, image: String){
         self.rowTitle = title
         self.rowDesc = desc
         self.rowImgHref = image
     }
     
-    init(pemodel:PEModel){
+    init(pemodel: PEModel){
         self.rowTitle = pemodel.rowTitle
         self.rowDesc = pemodel.rowDesc
         self.rowImgHref = pemodel.rowImgHref
