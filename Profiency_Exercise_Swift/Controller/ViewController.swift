@@ -10,18 +10,20 @@ import UIKit
 
 class ViewController: UIViewController,UIAlertViewDelegate {
     
-    @IBOutlet weak var navigationTitle: UINavigationItem!
-    @IBOutlet weak var countryTableView: UITableView!
-    private var webservice: PEWebservice!
-    @IBOutlet weak var titleBar: UINavigationBar!
-    private var listViewModel: PEListViewModel!
-    private var dataSource :PETableViewDataSource<PETableViewCell,PEViewModel>!
+    @IBOutlet var peView: UIView!
+    @IBOutlet weak var navigationTitle:UINavigationItem!
+    @IBOutlet weak var countryTableView:UITableView!
+    private var webservice:PEWebservice!
+    @IBOutlet weak var titleBar:UINavigationBar!
+    private var listViewModel:PEListViewModel!
+    private var dataSource:PETableViewDataSource<PETableViewCell,PEViewModel>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         updateTableView()  // Reloading the tableview
         self.countryTableView.addSubview(self.refreshControl)   // Adding refreshControl to the VC subview
+        ActivityIndicatorView().showActivityIndicatorView(view: self.view)
     }
     
     lazy var refreshControl:UIRefreshControl={
@@ -41,12 +43,16 @@ class ViewController: UIViewController,UIAlertViewDelegate {
     
     private func updateTableView(){
         // Checking the network connection
+
         if Reachability.isConnectedToNetwork(){  // If network connection is good
             self.webservice = PEWebservice()
             self.listViewModel = PEListViewModel(webservice:self.webservice)
             
             
             self.listViewModel.bindToSourceViewModels = {
+                ActivityIndicatorView().hideActivityIndicatorView(view: self.view)
+                self.peView .bringSubview(toFront: self.titleBar)
+                self.peView .bringSubview(toFront: self.countryTableView)
                 self.updateTableViewDataSource()
             }
         }else{ // If network connection doesn't exist

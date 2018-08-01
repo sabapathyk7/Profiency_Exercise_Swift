@@ -41,11 +41,11 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="QAf-bh-T3I">
-                                                    <rect key="frame" x="21" y="2" width="42" height="40"/>
+                                                    <rect key="frame" x="21" y="0.0" width="50" height="44"/>
                                                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="42" id="79Y-Ed-jKj"/>
-                                                        <constraint firstAttribute="height" constant="39.5" id="iZU-tc-Trr"/>
+                                                        <constraint firstAttribute="width" constant="50" id="79Y-Ed-jKj"/>
+                                                        <constraint firstAttribute="height" constant="44" id="iZU-tc-Trr"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="z4m-Sd-xmC">
@@ -58,11 +58,11 @@
                                             <constraints>
                                                 <constraint firstAttribute="trailing" secondItem="z4m-Sd-xmC" secondAttribute="trailing" constant="5" id="2Yf-86-Lbu"/>
                                                 <constraint firstItem="bHQ-U5-A2G" firstAttribute="top" secondItem="z4m-Sd-xmC" secondAttribute="bottom" id="I9b-Ld-iZw"/>
-                                                <constraint firstItem="z4m-Sd-xmC" firstAttribute="leading" secondItem="QAf-bh-T3I" secondAttribute="trailing" constant="21" id="PPN-bw-vr2"/>
+                                                <constraint firstItem="z4m-Sd-xmC" firstAttribute="leading" secondItem="QAf-bh-T3I" secondAttribute="trailing" constant="13" id="PPN-bw-vr2"/>
                                                 <constraint firstAttribute="bottom" secondItem="bHQ-U5-A2G" secondAttribute="bottom" id="V5M-SD-jeS"/>
                                                 <constraint firstAttribute="trailing" secondItem="bHQ-U5-A2G" secondAttribute="trailing" constant="5" id="WV2-KR-UCT"/>
                                                 <constraint firstItem="z4m-Sd-xmC" firstAttribute="top" secondItem="TQk-AH-Elg" secondAttribute="top" constant="2" id="Y6e-vv-MgP"/>
-                                                <constraint firstItem="bHQ-U5-A2G" firstAttribute="leading" secondItem="QAf-bh-T3I" secondAttribute="trailing" constant="21" id="fFi-Nj-eEb"/>
+                                                <constraint firstItem="bHQ-U5-A2G" firstAttribute="leading" secondItem="QAf-bh-T3I" secondAttribute="trailing" constant="13" id="fFi-Nj-eEb"/>
                                                 <constraint firstItem="QAf-bh-T3I" firstAttribute="leading" secondItem="TQk-AH-Elg" secondAttribute="leading" constant="21" id="mVx-bB-J1Q"/>
                                                 <constraint firstItem="QAf-bh-T3I" firstAttribute="centerY" secondItem="TQk-AH-Elg" secondAttribute="centerY" id="v1b-kE-ja2"/>
                                             </constraints>
@@ -91,6 +91,7 @@
                     <connections>
                         <outlet property="countryTableView" destination="QRS-Db-xAj" id="agq-e2-bWe"/>
                         <outlet property="navigationTitle" destination="Hpr-Ui-24g" id="8TL-Yd-xVK"/>
+                        <outlet property="peView" destination="8bC-Xf-vdC" id="WRS-Rl-P5a"/>
                         <outlet property="titleBar" destination="SWX-Ol-2yB" id="vjm-Jb-BRB"/>
                     </connections>
                 </viewController>

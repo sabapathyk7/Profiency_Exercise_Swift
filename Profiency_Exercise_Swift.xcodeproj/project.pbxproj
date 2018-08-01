@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A201490821117E44004EC907 /* ActivityIndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A201490721117E44004EC907 /* ActivityIndicatorView.swift */; };
 		A21DBEBA2105AD1A00DE53AE /* PETableViewDataSourceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21DBEB92105AD1A00DE53AE /* PETableViewDataSourceTests.swift */; };
 		A2D053AB2101AE71001C55A4 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053AA2101AE71001C55A4 /* AppDelegate.swift */; };
 		A2D053AD2101AE71001C55A4 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A2D053AC2101AE71001C55A4 /* ViewController.swift */; };
@@ -43,6 +44,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A201490721117E44004EC907 /* ActivityIndicatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityIndicatorView.swift; sourceTree = "<group>"; };
 		A21DBEB92105AD1A00DE53AE /* PETableViewDataSourceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PETableViewDataSourceTests.swift; sourceTree = "<group>"; };
 		A2D053A72101AE71001C55A4 /* Profiency_Exercise_Swift.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Profiency_Exercise_Swift.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A2D053AA2101AE71001C55A4 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -172,6 +174,7 @@
 			isa = PBXGroup;
 			children = (
 				A2D053E42101B05C001C55A4 /* PETableViewCell.swift */,
+				A201490721117E44004EC907 /* ActivityIndicatorView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -356,6 +359,7 @@
 				A2E74B9F2105745E0009A379 /* PETableViewDataSource.swift in Sources */,
 				A2D053E52101B05C001C55A4 /* PETableViewCell.swift in Sources */,
 				A2E74B9E2105745E0009A379 /* PEWebservice.swift in Sources */,
+				A201490821117E44004EC907 /* ActivityIndicatorView.swift in Sources */,
 				A2D053DD2101AF59001C55A4 /* PEModel.swift in Sources */,
 				A2D053B32101AE71001C55A4 /* Profiency_Exercise_Swift.xcdatamodeld in Sources */,
 				A2D053F72104D43E001C55A4 /* Reachability.swift in Sources */,

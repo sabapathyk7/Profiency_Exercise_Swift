@@ -32,7 +32,7 @@ class PEListViewModel:NSObject {
     }
     func populateListData(){
         
-        self.webservice .parseJSON { [unowned self] listData in
+        self.webservice.parseJSON { [unowned self] listData in
             self.countryViewModels = listData.flatMap(PEViewModel.init)   // Fetching the data from the service API calls and mapping to the PEViewModel class
         }
         
