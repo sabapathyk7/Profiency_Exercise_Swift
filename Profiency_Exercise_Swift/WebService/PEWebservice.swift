@@ -38,7 +38,7 @@ class PEWebservice{
             let titleFromAPI = json["title"] as? String
             NotificationCenter.default.post(name: Notification.Name("titleJSON"), object: nil, userInfo: ["title":titleFromAPI as Any])
             let array = json["rows"] as! [JSONDictionary]
-            profiencySource = array.flatMap(PEModel.init)
+            profiencySource = array.compactMap(PEModel.init)
             DispatchQueue.main.async {
                 completion(profiencySource)
             }
