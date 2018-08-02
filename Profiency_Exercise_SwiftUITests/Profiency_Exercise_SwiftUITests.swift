@@ -19,6 +19,14 @@ class Profiency_Exercise_SwiftUITests: XCTestCase {
         continueAfterFailure = false
         // UI tests must launch the application that they test. Doing this in setup will make sure it happens for each test method.
         XCUIApplication().launch()
+        let table = XCUIApplication().tables.element(boundBy:0)
+        
+        // Get the coordinate for the bottom of the table view
+        let tableBottom = table.coordinate(withNormalizedOffset:CGVector(dx: 0.5, dy: 50.0))
+        
+        // Scroll from tableBottom to new coordinate
+        let scrollVector = CGVector(dx: 0.0, dy: -220.0)
+        tableBottom.press(forDuration: 1.0, thenDragTo: tableBottom.withOffset(scrollVector))
 
         // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
     }
