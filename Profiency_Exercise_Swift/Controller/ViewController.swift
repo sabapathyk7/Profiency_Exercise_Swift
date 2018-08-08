@@ -9,22 +9,128 @@
 import UIKit
 
 class ViewController: UIViewController, UIAlertViewDelegate {
+  
+     var navigationBar: UINavigationBar! = UINavigationBar()
+     var navigationTitle: UINavigationItem! = UINavigationItem()
+     var countryTableView: UITableView! = UITableView()
     
-    @IBOutlet var peView: UIView!
-    @IBOutlet weak var navigationTitle: UINavigationItem!
-    @IBOutlet weak var countryTableView: UITableView!
+    
+//    @IBOutlet var peView: UIView!
+//    @IBOutlet weak var navigationTitle: UINavigationItem!
+//    @IBOutlet weak var countryTableView: UITableView!
     private var webservice: PEWebservice!
-    @IBOutlet weak var titleBar: UINavigationBar!
+//    @IBOutlet weak var titleBar: UINavigationBar!
     private var listViewModel: PEListViewModel!
     private var dataSource: PETableViewDataSource<PETableViewCell, PEViewModel>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        
+        createView()
+        
         updateTableView()  // Reloading the tableview
         self.countryTableView.addSubview(self.refreshControl)   // Adding refreshControl to the VC subview
         ActivityIndicatorView().showActivityIndicatorView(view: self.view)
     }
+    func createView(){
+        
+        navigationBar = UINavigationBar.init(frame: CGRect.init(x: 0, y: 20, width: self.view.frame.width, height: 64.0))
+        navigationBar.backgroundColor = .red
+        self.view.addSubview(navigationBar)
+        navigationBar.translatesAutoresizingMaskIntoConstraints = false
+       
+
+
+        navigationTitle = UINavigationItem.init(title: "Title")
+        navigationBar.setItems([navigationTitle], animated: true)
+        
+        countryTableView = UITableView.init(frame: CGRect.init(x: 0, y: 64, width: self.view.frame.size.width, height: self.view.frame.size.height), style: .plain)
+        countryTableView.backgroundColor = .blue
+        self.view.addSubview(countryTableView)
+        countryTableView.translatesAutoresizingMaskIntoConstraints = false
+        let nvleading = NSLayoutConstraint(item: navigationBar,
+                                           attribute: .leading,
+                                           relatedBy: .equal,
+                                           toItem: self.view,
+                                           attribute: .leading,
+                                           multiplier: 1.0,
+                                           constant: 0)
+        
+        let nvtrailing = NSLayoutConstraint(item: navigationBar,
+                                            attribute: .trailing,
+                                            relatedBy: .equal,
+                                            toItem: self.view,
+                                            attribute: .trailing,
+                                            multiplier: 1.0,
+                                            constant: 0)
+        
+        let nvtop = NSLayoutConstraint(item: navigationBar,
+                                       attribute: .top,
+                                       relatedBy: .equal,
+                                       toItem: self.view,
+                                       attribute: .top,
+                                       multiplier: 1.0,
+                                       constant: 20)
+        
+        let nvbottom = NSLayoutConstraint(item: navigationBar,
+                                          attribute: .bottom,
+                                          relatedBy: .equal,
+                                          toItem: countryTableView,
+                                          attribute: .bottom,
+                                          multiplier: 1.0,
+                                          constant: 84.0)
+        NSLayoutConstraint.activate([nvleading, nvtrailing, nvtop, nvbottom])
+        
+        let tvleading = NSLayoutConstraint(item: countryTableView,
+                                         attribute: .leading,
+                                         relatedBy: .equal,
+                                         toItem: navigationBar,
+                                         attribute: .leading,
+                                         multiplier: 1.0,
+                                         constant: 0.0)
+        
+        let tvtrailing = NSLayoutConstraint(item: countryTableView,
+                                          attribute: .trailing,
+                                          relatedBy: .equal,
+                                          toItem: navigationBar,
+                                          attribute: .trailing,
+                                          multiplier: 1.0,
+                                          constant: 0.0)
+        
+        let tvtop = NSLayoutConstraint(item: countryTableView,
+                                     attribute: .top,
+                                     relatedBy: .equal,
+                                     toItem: navigationBar,
+                                     attribute: .top,
+                                     multiplier: 1.0,
+                                     constant: 44.0)
+        
+        let tvbottom = NSLayoutConstraint(item: countryTableView,
+                                        attribute: .bottom,
+                                        relatedBy: .equal,
+                                        toItem: self.view,
+                                        attribute: .bottom,
+                                        multiplier: 1.0,
+                                        constant: 0.0)
+        
+        NSLayoutConstraint.activate([tvleading, tvtrailing, tvtop, tvbottom])
+
+        
+        countryTableView.register(PETableViewCell.self, forCellReuseIdentifier: Cells.source)
+        
+        
+        
+        
+      
+        
+        
+        
+        
+        
+    }
+    
+    
     
     lazy var refreshControl: UIRefreshControl={
         
@@ -50,8 +156,8 @@ class ViewController: UIViewController, UIAlertViewDelegate {
             
             self.listViewModel.bindToSourceViewModels = {
                 ActivityIndicatorView().hideActivityIndicatorView(view: self.view)
-                self.peView .bringSubview(toFront: self.titleBar)
-                self.peView .bringSubview(toFront: self.countryTableView)
+                self.view.bringSubview(toFront: self.navigationBar)
+                self.view.bringSubview(toFront: self.countryTableView)
                 self.updateTableViewDataSource()
             }
         }else{ // If network connection doesn't exist

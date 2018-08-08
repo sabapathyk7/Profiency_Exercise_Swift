@@ -32,6 +32,7 @@ class PETableViewDataSource<Cell: UITableViewCell, ViewModel>: NSObject,UITableV
         return 1
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         let cell = tableView.dequeueReusableCell(withIdentifier: self.cellIdentifier, for: indexPath) as! Cell
         let item = self.items[indexPath.row]// Assigning the values from the model class items to the cell based on the indexpath.
         self.configureCell(cell, item)// Configuring the cell using the cell identifier and items to be displayed

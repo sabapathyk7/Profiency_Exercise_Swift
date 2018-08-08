@@ -9,16 +9,16 @@
 import XCTest
 @testable import Profiency_Exercise_Swift
 class PETableViewDataSourceTests: XCTestCase {
+    
     var datasource: PETableViewDataSource<UITableViewCell, Any>!
     private var listViewModel: PEListViewModel!
 
     override func setUp() {
-        super.setUp()
-        let webservice = PEWebservice()
-
-        listViewModel = PEListViewModel(webservice: webservice)
-
         // Put setup code here. This method is called before the invocation of each test method in the class.
+        super.setUp()
+        
+        let webservice = PEWebservice()
+        listViewModel = PEListViewModel(webservice: webservice)
         datasource = PETableViewDataSource(cellIdentifier: Cells.source, items: listViewModel.countryViewModels, configureCell: { (cell, vm) in
             
         })
@@ -42,7 +42,7 @@ class PETableViewDataSourceTests: XCTestCase {
     func testValueInDataSource() {
         
         // giving data value
-        
+         
         let temp1 = [Pevalues.name, Pevalues.desc]
         let temp2 = [Pevalues.name, Pevalues.desc]
         datasource.items = [temp1, temp2]
@@ -70,16 +70,5 @@ class PETableViewDataSourceTests: XCTestCase {
             return
         }
     }
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
+   
 }
