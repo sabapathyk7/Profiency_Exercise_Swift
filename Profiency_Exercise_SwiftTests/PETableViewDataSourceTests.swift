@@ -19,6 +19,8 @@ class PETableViewDataSourceTests: XCTestCase {
         
         let webservice = PEWebservice()
         listViewModel = PEListViewModel(webservice: webservice)
+
+        // Put setup code here. This method is called before the invocation of each test method in the class.
         datasource = PETableViewDataSource(cellIdentifier: Cells.source, items: listViewModel.countryViewModels, configureCell: { (cell, vm) in
             
         })
